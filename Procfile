@@ -1,1 +1,1 @@
-web: gunicorn weatherAlert.wsgi
+web: python manage.py runserver
