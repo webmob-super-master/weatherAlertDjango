@@ -75,12 +75,12 @@ WSGI_APPLICATION = 'weatherAlert.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_name',
-        'USER': 'db_username',
-        'PASSWORD': 'db_password',
-        'HOST': 'db_hostname',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd995tka3ism461',
+        'USER': 'xesqckhxuphgkd',
+        'PASSWORD': 'e10e3be93c6d685777afb1412fa982e614b13ba50edc9a6e60e3592fd95a2d16',
+        'HOST': 'ec2-54-163-233-103.compute-1.amazonaws.com',
+        'PORT': '5432',
         'OPTIONS': {
             'sql_mode': 'STRICT_TRANS_TABLES',
         },
