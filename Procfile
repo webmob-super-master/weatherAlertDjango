@@ -1,1 +1,1 @@
-web: gunicorn weatheralert.wsgi
+web: gunicorn weatherAlert.wsgi
