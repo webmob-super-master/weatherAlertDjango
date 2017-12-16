@@ -37,17 +37,17 @@ def alert(request, region):
             alerts.append(messages)
 
     for nums in count:
-	    if nums > 0:
-		    notify = Alert(
-		        weather,
-		        location[0],
-		        requested_region.webhook,
-		        requested_region.name,
-		        formatted_owners)
+        if nums > 0:
+            notify = Alert(
+                weather,
+                location[0],
+                requested_region.webhook,
+                requested_region.name,
+                formatted_owners)
             for alert in alerts:
                 notify.send_alert(alert)
-		    notify.notify_ops()
-		    break
+            notify.notify_ops()
+            break
 
     json_response = {
         'region': requested_region.name,
