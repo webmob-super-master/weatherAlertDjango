@@ -21,6 +21,6 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^$', include('weatherAlert_app.urls')),
+    url(r'^', include('weatherAlert_app.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
