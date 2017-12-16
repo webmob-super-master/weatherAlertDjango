@@ -17,7 +17,7 @@ class Region(models.Model):
 class City(models.Model):
     region = models.ForeignKey(Region, on_delete=models.CASCADE, null=True)
     city = models.CharField(max_length=64)
-    state = models.CharField(max_length=2)
+    state = models.CharField(max_length=20)
     country = models.CharField(max_length=64, default='USA')
     is_active = models.BooleanField(default=True)
 
