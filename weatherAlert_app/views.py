@@ -44,6 +44,8 @@ def alert(request, region):
 		        requested_region.webhook,
 		        requested_region.name,
 		        formatted_owners)
+            for alert in alerts:
+                notify.send_alert(alert)
 		    notify.notify_ops()
 		    break
 

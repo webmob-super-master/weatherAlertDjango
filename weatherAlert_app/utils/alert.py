@@ -68,7 +68,6 @@ class Alert(object):
 		"""
 
 		msg = "{0} from {1} in {2}".format(hour[1], hour[0], self.location[0])
-		self.send_alert(msg)
 		return msg
 
 	def notify_ops(self):
