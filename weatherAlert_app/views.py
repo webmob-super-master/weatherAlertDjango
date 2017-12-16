@@ -58,3 +58,13 @@ def alert(request, region):
 
     return HttpResponse(data, content_type='application/json')
 
+def file(request):
+    content = """FD22ED87E4D2FD9FC05D33FE908C9DF9
+
+This is ATrigger.com API Verification File.
+This file should be placed on the root folder of target url. This file is unique for each account in ATrigger.com
+http://example.com/mySite/Task?name=joe        This file should be available at: http://example.com/ATriggerVerify.txt
+http://sub.example.com/mySite/Task?name=joe    This file should be available at: http://sub.example.com/ATriggerVerify.txt
+"""
+    return HttpResponse(content, content_type='text/plain')
+

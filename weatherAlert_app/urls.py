@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^alert/(?P<region>\w+)', views.alert, name='alert'),
+    rl(r'^(?i)ATriggerVerify.txt$', views.file.as_view()),
 ]
