@@ -45,7 +45,8 @@ def alert(request, region):
                 requested_region.name,
                 formatted_owners)
             for alert in alerts:
-                notify.send_alert(alert)
+                for message in alert:
+                    notify.send_alert(message)
             notify.notify_ops()
             break
 
