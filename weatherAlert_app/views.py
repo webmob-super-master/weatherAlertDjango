@@ -1,4 +1,5 @@
 import json
+import time
 
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
@@ -23,7 +24,7 @@ def alert(request, region):
         location = [city.city, city.state]
         forecast = HourlyWeather(location)
         weather = forecast.hourly()
-
+        time.sleep(20)
         alarm = Alert(
             weather,
             location,
