@@ -1,2 +1,2 @@
 web: gunicorn weatherAlert.wsgi
-worker: python3 weatherAlert_app.worker
+worker: python3 manage.py rqworker

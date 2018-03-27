@@ -4,17 +4,17 @@ from .utils.alert import Alert
 from .utils.weather import HourlyWeather
 
 
-def run_task(requested_region, city, formatted_owners, delay_num, total_num):
+def run_task(webhook, region_name, city, state, formatted_owners, delay_num, total_num):
     alerts = []
     time.sleep(delay_num * 15)
-    location = [cities[i].city, cities[i].state]
+    location = [city, state]
     forecast = HourlyWeather(location)
     weather = forecast.hourly()
     alarm = Alert(
         weather,
-        location[0],
-        requested_region.webhook,
-        requested_region.name,
+        location,
+        webhook,
+        region_name,
         formatted_owners
     )
     count, messages = alarm.check_weather()

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['dd-weatheralert.herokuapp.com','127.0.0.1']
 
 INSTALLED_APPS = [
     'weatherAlert_app.apps.WeatheralertAppConfig',
+    'django_rq',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,6 +70,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'weatherAlert.wsgi.application'
 
+RQ_QUEUES = {
+    'default': {
+        'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379/0'),
+        'DEFAULT_TIMEOUT': 500,
+    },
+    'high': {
+        'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379/0'),
+        'DEFAULT_TIMEOUT': 500,
+    },
+    'low': {
+        'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379/0'),
+        'DEFAULT_TIMEOUT': 500,
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
