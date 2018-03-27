@@ -62,7 +62,6 @@ class HourlyWeather(object):
 			formatted_forecast (:obj:'list'): List of time intervals and corresponding condition
 
 		"""
-
 		api_endpoint = '/hourly/q/'
 		response = self.request_api(api_endpoint)
 		weather = []
