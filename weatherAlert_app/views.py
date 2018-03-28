@@ -28,7 +28,7 @@ def alert(request, region):
                 formatted_owners,
                 i,
                 len(cities)
-            )
+        )
         else:
             result = run_task( 
                 requested_region.webhook,
@@ -37,7 +37,8 @@ def alert(request, region):
                 cities[i].state,
                 formatted_owners,
                 i,
-                len(cities)
+                len(cities),
+                mode='sync'
             )
     json_response = {
         'is_completed': True

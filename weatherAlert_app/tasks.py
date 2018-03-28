@@ -4,9 +4,10 @@ from .utils.alert import Alert
 from .utils.weather import HourlyWeather
 
 
-def run_task(webhook, region_name, city, state, formatted_owners, delay_num, total_num):
+def run_task(webhook, region_name, city, state, formatted_owners, delay_num, total_num, mode='async'):
     alerts = []
-    time.sleep(delay_num * 15)
+    if mode == 'async':
+        time.sleep(delay_num * 15)
     location = [city, state]
     forecast = HourlyWeather(location)
     weather = forecast.hourly()
