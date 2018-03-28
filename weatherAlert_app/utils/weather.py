@@ -1,9 +1,6 @@
 import requests
 
 
-#Wunderground API Key
-API_KEY = ''
-
 #Interval to search for inclement weather
 FORECAST_HOURS = 8
 
