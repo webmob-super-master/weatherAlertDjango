@@ -1,5 +1,7 @@
 import requests
 
+from django.conf import settings
+
 
 #Interval to search for inclement weather
 FORECAST_HOURS = 8
@@ -40,7 +42,7 @@ class HourlyWeather(object):
 		"""
 
 		url = '{0}{1}{2}{3}/{4}.json'.format(self.base_url,
-			API_KEY,
+			settings.WUNDERGROUND_API_KEY,
 			api_endpoint,
 			self.locations[1],
 			self.locations[0])
