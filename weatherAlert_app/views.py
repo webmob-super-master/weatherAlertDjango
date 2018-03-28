@@ -18,7 +18,7 @@ def alert(request, region):
     owners = Owner.objects.filter(region=requested_region.id)
     formatted_owners = ' '.join([owner.slack_handle for owner in owners])
     for i in range(0, len(cities)):
-        if i > 7:
+        if i > (len(cities) - 9):
             result = django_rq.enqueue(
                 run_task, 
                 requested_region.webhook,
