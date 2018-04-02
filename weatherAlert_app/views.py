@@ -1,6 +1,6 @@
 import json
-from rq import Queue
 
+from django.core.cache import cache
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 import django_rq
@@ -17,6 +17,7 @@ def alert(request, region):
     cities = City.objects.filter(region=requested_region.id)
     owners = Owner.objects.filter(region=requested_region.id)
     formatted_owners = ' '.join([owner.slack_handle for owner in owners])
+    cache.set('requires_notify', 0)
     for i in range(0, len(cities)):
         if i > (len(cities) - 9):
             result = django_rq.enqueue(

@@ -5,3 +5,4 @@ requests
 redis
 rq
 django_rq
+django-redis-cache

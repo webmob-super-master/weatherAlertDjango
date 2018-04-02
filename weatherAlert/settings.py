@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ALLOWED_HOSTS
 
@@ -35,6 +35,7 @@ WUNDERGROUND_API_KEY = WUNDERGROUND_API_KEY
 INSTALLED_APPS = [
     'weatherAlert_app.apps.WeatheralertAppConfig',
     'django_rq',
+    'redis_cache',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,6 +74,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'weatherAlert.wsgi.application'
 
+# Redis Queue
+REDISTOGO_URL = REDISTOGO_URL
 RQ_QUEUES = {
     'default': {
         'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379/0'),
@@ -92,6 +95,10 @@ RQ_QUEUES = {
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = DATABASES
+
+#Redis cache
+
+CACHES = CACHES
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
