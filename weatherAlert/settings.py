@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import os
 
+from .settings_secret import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -19,14 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'asdfkjh3r872rl112ebalwkdnkjsf39sefknKJF33fi4j'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['dd-weatheralert.herokuapp.com']
+ALLOWED_HOSTS = ALLOWED_HOSTS
 
-WUNDERGROUND_API_KEY = 'e6bbd971c5d7cbc5'
+WUNDERGROUND_API_KEY = WUNDERGROUND_API_KEY
 
 # Application definition
 
@@ -89,17 +91,7 @@ RQ_QUEUES = {
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd995tka3ism461',
-        'USER': 'xesqckhxuphgkd',
-        'PASSWORD': 'e10e3be93c6d685777afb1412fa982e614b13ba50edc9a6e60e3592fd95a2d16',
-        'HOST': 'ec2-54-163-233-103.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-
+DATABASES = DATABASES
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
